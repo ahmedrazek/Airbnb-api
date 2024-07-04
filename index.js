@@ -18,7 +18,15 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 app.use("/uploads", express.static(`${__dirname}/uploads`));
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+    credentials: true,
+    allowedHeaders:
+      "Origin, X-Requested-With, Content-Type, Accept, Authorization",
+    methods: "GET, POST, PATCH, DELETE, OPTIONS",
+  })
+);
 mongoose
   .connect(process.env.MONGO_URL)
   .then(() => console.log("DB connection successful!"));
