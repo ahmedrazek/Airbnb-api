@@ -20,7 +20,7 @@ app.use(cookieParser());
 app.use("/uploads", express.static(`${__dirname}/uploads`));
 app.use(
   cors({
-    origin: "https://airbnb-clone-iota-azure.vercel.app/",
+    origin: "https://airbnb-clone-iota-azure.vercel.app",
     credentials: true,
     allowedHeaders: ["Content-Type", "Authorization"],
     methods: ["GET", "POST", "PATCH", "PUT", "DELETE"],
