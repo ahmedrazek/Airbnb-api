@@ -20,11 +20,10 @@ app.use(cookieParser());
 app.use("/uploads", express.static(`${__dirname}/uploads`));
 app.use(
   cors({
-    origin: "*",
+    origin: "http://localhost:5173",
     credentials: true,
-    allowedHeaders:
-      "Origin, X-Requested-With, Content-Type, Accept, Authorization",
-    methods: "GET, POST, PATCH, DELETE, OPTIONS",
+    allowedHeaders: ["Content-Type", "Authorization"],
+    methods: ["GET", "POST", "PATCH", "PUT", "DELETE"],
   })
 );
 mongoose
